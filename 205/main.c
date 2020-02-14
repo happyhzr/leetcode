@@ -40,19 +40,6 @@ bool isIsomorphic(char *s, char *t)
     return false;
 }
 
-// bool isIsomorphic(char *s, char *t)
-// {
-//     if (!isomorphic(s, t))
-//     {
-//         return false;
-//     }
-//     if (!isomorphic(t, s))
-//     {
-//         return false;
-//     }
-//     return true;
-// }
-
 int main()
 {
     char *s = "egg";
