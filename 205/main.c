@@ -10,9 +10,9 @@ bool isIsomorphic(char *s, char *t);
 bool isomorphic(char *s, char *t)
 {
     memset(hash, -1, sizeof(hash));
-    int i;
+    //int i;
     int len = strlen(s);
-    for (i = 0; i < len; i++)
+    for (int i = 0; i < len; i++)
     {
         int n1 = (int)s[i];
         int n2 = (int)t[i];
@@ -33,16 +33,25 @@ bool isomorphic(char *s, char *t)
 
 bool isIsomorphic(char *s, char *t)
 {
-    if (!isomorphic(s, t))
+    if (isomorphic(s, t) && isomorphic(t, s))
     {
-        return false;
+        return true;
     }
-    if (!isomorphic(t, s))
-    {
-        return false;
-    }
-    return true;
+    return false;
 }
+
+// bool isIsomorphic(char *s, char *t)
+// {
+//     if (!isomorphic(s, t))
+//     {
+//         return false;
+//     }
+//     if (!isomorphic(t, s))
+//     {
+//         return false;
+//     }
+//     return true;
+// }
 
 int main()
 {
