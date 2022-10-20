@@ -1,14 +1,19 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
-        cache = set()
+        slow = n
+        fast = n
+        slow = self.helper(slow)
+        fast = self.helper(fast)
+        fast = self.helper(fast)
         while True:
-            print(n)
-            if n == 1:
+            if fast == 1:
                 return True
-            if n in cache:
+            if fast == slow:
                 return False
-            cache.add(n)
-            n = self.helper(n)
+            print(slow)
+            slow = self.helper(slow)
+            fast = self.helper(fast)
+            fast = self.helper(fast)
 
     def helper(self, n: int) -> int:
         sum = 0
