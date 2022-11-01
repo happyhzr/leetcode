@@ -10,19 +10,14 @@ type rang struct {
 }
 
 func summaryRanges(nums []int) []string {
-	if len(nums) == 0 {
-		return make([]string, 0)
-	}
 	ranges := make([]*rang, 0)
-	low := 0
-	high := 0
-	for ; high < len(nums); high++ {
-		if high > 0 && nums[high-1]+1 != nums[high] {
-			ranges = append(ranges, &rang{nums[low], nums[high-1]})
-			low = high
+	for i := 0; i < len(nums); {
+		low := i
+		i++
+		for ; i < len(nums) && nums[i-1]+1 == nums[i]; i++ {
 		}
+		ranges = append(ranges, &rang{nums[low], nums[i-1]})
 	}
-	ranges = append(ranges, &rang{nums[low], nums[high-1]})
 	results := make([]string, 0, len(ranges))
 	for _, r := range ranges {
 		if r.low == r.high {
