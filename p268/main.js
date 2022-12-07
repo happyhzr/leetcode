@@ -3,8 +3,8 @@
  * @return {number}
  */
 var missingNumber = function (nums) {
-    want = (0 + nums.length) * (nums.length + 1) / 2
-    got = 0
+    let want = (0 + nums.length) * (nums.length + 1) / 2
+    let got = 0
     nums.forEach(num => got += num)
     return want - got
 };
