@@ -27,9 +27,4 @@ function isVowel(c) {
     return "aeiouAEIOU".indexOf(c) !== -1
 }
 
-function main() {
-    console.log(reverseVowels("hello"))
-    console.log(reverseVowels("leetcode"))
-}
-
-main()
+module.exports = reverseVowels
