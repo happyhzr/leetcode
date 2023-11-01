@@ -1,5 +1,6 @@
-.vscode
-.idea
-venv
+.vscode/
+.idea/
+venv/
 __pycache__/
-node_modules
+node_modules/
+.pytest_cache/
