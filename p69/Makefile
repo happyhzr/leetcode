@@ -1,0 +1,3 @@
+test: main.c
+	gcc -o main main.c
+	./main
