@@ -21,7 +21,6 @@ class Solution:
                 self.col_used[col].add(num)
                 self.box_used[(row // 3) * 3 + (col // 3)].add(num)
         self.backtracking(0, 0)
-        return self.board
 
     def backtracking(self, row: int, col: int) -> bool:
         if row == 9:
@@ -46,6 +45,7 @@ class Solution:
                 self.row_used[row].remove(num_str)
                 self.col_used[col].remove(num_str)
                 self.box_used[(row // 3) * 3 + (col // 3)].remove(num_str)
+        return False
 
     def is_valid(self, row: int, col: int, num: str) -> bool:
         if num in self.row_used[row]:
