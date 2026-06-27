@@ -4,8 +4,8 @@ class Solution:
         hash = {}
         for i in range(len(nums)):
             hash[nums[i]] = i
-        for i in range(len(nums)-1):
-            another = target-nums[i]
+        for i in range(len(nums) - 1):
+            another = target - nums[i]
             if another in hash and hash[another] != i:
                 return [i, hash[another]]
 
